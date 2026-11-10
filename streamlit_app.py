@@ -14,7 +14,7 @@ data = yf.download(ticker, period='5y', interval='1mo')
 close_prices = data['Close'][ticker]
 
 # Fetch 5 years of historical data for AAPL
-data = yf.Ticker("AAPL").history(period="5y")
+data = yf.Ticker("MFST").history(period="5y")
 if not data.empty:
   
   # Calculate monthly returns

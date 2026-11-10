@@ -11,11 +11,9 @@ rf_monthly = 0.0025 # 0.25% per month
 
 # Download monthly stock price data for the past 5 years
 data = yf.download(ticker, period='5y', interval='1mo')
-close_prices = data['Close'][ticker]
 
-# Fetch 5 years of historical data for AAPL
-data = yf.Ticker("MFST").history(period="5y")
 if not data.empty:
+  close_prices = data['Close'][ticker]
   
   # Calculate monthly returns
   monthly_returns = close_prices.pct_change().dropna()
